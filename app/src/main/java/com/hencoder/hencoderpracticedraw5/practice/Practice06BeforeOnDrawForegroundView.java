@@ -27,14 +27,18 @@ public class Practice06BeforeOnDrawForegroundView extends AppCompatImageView {
         paint.setTextSize(60);
     }
 
+    /**
+     * 方法是 API 23 才引入的，所以在重写这个方法的时候要确认你的 minSdk 达到了 23，不然低版本的手机装上你的软件会没有效果
+     * @param canvas
+     */
     @Override
     public void onDrawForeground(Canvas canvas) {
         // 在 super.onDrawForeground() 的上方插入绘制代码，让绘制内容被前景盖住
         // 由于这期的重点是绘制代码的位置而不是绘制代码本身，所以直接给出绘制代码，你只要解除注释就好
-        /*paint.setColor(Color.parseColor("#f44336"));
+        paint.setColor(Color.parseColor("#f44336"));
         canvas.drawRect(0, 40, 200, 120, paint);
         paint.setColor(Color.WHITE);
-        canvas.drawText("New", 20, 100, paint);*/
+        canvas.drawText("New", 20, 100, paint);
 
         super.onDrawForeground(canvas);
     }
